@@ -52,7 +52,7 @@ git config --global user.email "email@example.com"  #配置邮箱
 修改有三种状态：
 1. 未提交到stage：只能直接读取当前branch的最新版本，`git reset HEAD~0`
 2. 已提交到stage，但未提交到branch：可以恢复到上一次`git add`的状态，`git checkout -- <filename>`
-3. 已提交到branch
+3. 已提交到branch：只能读取前一个档，`git reset HEAD~1`
 
 
 
