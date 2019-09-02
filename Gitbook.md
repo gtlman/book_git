@@ -21,3 +21,45 @@
 4. `book.json `是配置文件,用于个性化调整` gitbook `的相关配置,如定义电子书的标题,封面,作者等信息.虽然是手动创建但一般是必选的.在` gitbook `根目录下新建` book.json `配置文件
 5. `GLOSSARY.md `是默认的词汇表,主要说明专业词汇的详细解释,这样阅读到专业词汇时就会有相应提示信息,也是手动创建但是可选的.
 6. `LANGS.md `是默认的语言文件,用于国际化版本翻译,和` GLOSSARY.md `一样是手动创建但是可选的.
+
+## 发布电子书
+发布电子书需要利用到`GitHub`提供的`GitHub pages`静态网页服务，`GitHub pages`允许发布`GitHub`的静态网页，而`gitbook`的`gitbook build`可以输出静态网页，因此可以将输出的电子书发布到免费的`GitHub pages`上
+### GitHub pages的主站 和 项目站点
+#### 主站
+每个账号有且只有一个主站。
+
+在`GitHub`上创建一个名为`<username>.github.io`的公开版本库，名字必须是这个格式
+
+然后仓库根目录下必须要有一个`index.html`作为首页
+
+然后设置`GitHub pages`的源码分支，如下：
+
+![github_1.png](./gitbook/images/gitbook_1.png "GitHub_1.png")
+
+![github_2.png](./gitbook/images/gitbook_2.png "GitHub_2.png")
+
+主站链接：[https://gtlman.github.io](https://gtlman.github.io "主站")
+
+### 项目站点
+
+例如我有四个公开库需要作为电子书发布：
+
+`gtlman.github.io`是主站，`book_git`，`book_redis`，`book_database`是三个项目站点
+
+首先需要将电子书输出为静态网页：`gitbook build`
+
+默认会输出到`_book`目录
+
+将`_book`下的文件全部拷贝到根目录下，然后`git pull`到`GitHub`上
+
+然后跟主站一样设置`GitHub pages`即可
+
+项目站点的链接：
+
+[https://gtlman.github.io/book_git/](https://gtlman.github.io/book_git/ "git电子书")
+
+[https://gtlman.github.io/book_redis/](https://gtlman.github.io/book_redis/ "redis电子书")
+
+[https://gtlman.github.io/book_database/](https://gtlman.github.io/book_database/ "数据库电子书")
+
+可以看到 主站 和 项目站点 URL的 主次性质
