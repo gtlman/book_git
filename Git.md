@@ -41,4 +41,16 @@ git config --global user.email "email@example.com"  #配置邮箱
 `git commit -m "备注"`：将暂存区中的写操作提交到当前分支
 
 ### 查看分支的提交日志
-`git log (<filename>)`：查看
+`git log`：查看文件修改记录，返回修改者身份，Git ID，以及备注信息
+
+### 读档（Load Game）
+`git reset`：有两种方式
+1. 根据Git ID进行读档，`git rest GitID`，不过Git ID很难记忆，常用的是第二种读档方式
+2. 读取前面第X个档，`git reset Head~X`
+
+### 撤销修改
+修改有三种状态：
+1. 未提交到stage：直接读取当前branch的最新版本
+2. 已提交到stage，但未提交到branch
+3. 已提交到branch
+
